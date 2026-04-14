@@ -1,45 +1,43 @@
 # sparkjs-skill
 
-[SparkJS](https://sparkjs.dev/) (3D Gaussian Splat rendering library) の知識を Claude Code に追加するスキルです。
+A [Claude Code](https://claude.ai/claude-code) skill that adds comprehensive knowledge of the [SparkJS](https://sparkjs.dev/) 3D Gaussian Splat rendering library.
 
-## 概要
+## Overview
 
-SparkJS は Three.js と統合された、ブラウザ上で 3D Gaussian Splats をレンダリング・操作するための JavaScript ライブラリです。このスキルを導入すると、Claude Code が SparkJS の API・設計パターン・最適化手法を理解した上でコード生成やデバッグを行えるようになります。
+SparkJS is a JavaScript library integrated with Three.js for rendering and manipulating 3D Gaussian Splats in web browsers. With this skill installed, Claude Code understands the full SparkJS API, design patterns, and optimization techniques, enabling accurate code generation and debugging.
 
-## 対応する機能
+## Features Covered
 
-- **SparkRenderer** / **SplatMesh** / **PackedSplats** / **ExtSplats** の全 API
-- `.ply`, `.spz`, `.splat`, `.ksplat`, `.sog`, `.rad` 形式のスプラットファイル読み込み
-- **SDF によるスプラット編集** (球・ボックス・平面・楕円体・円柱・カプセル・円錐)
-- **プロシージャルスプラット生成** (グリッド、テキスト、画像、パーティクル)
-- **Level-of-Detail (LoD)** ストリーミング・チューニング
-- **Dyno シェーダーグラフシステム** (117+ 関数の stdlib リファレンス付き)
-- **SparkControls** (FPS / ポインタ / ゲームパッド / モバイルタッチ)
-- プラットフォーム別パフォーマンス最適化ガイド
+- Full API for **SparkRenderer** / **SplatMesh** / **PackedSplats** / **ExtSplats**
+- Loading splat files in `.ply`, `.spz`, `.splat`, `.ksplat`, `.sog`, `.rad` formats
+- **SDF-based splat editing** (sphere, box, plane, ellipsoid, cylinder, capsule, cone)
+- **Procedural splat generation** (grid, text, image, particles)
+- **Level-of-Detail (LoD)** streaming and tuning
+- **Dyno shader graph system** (117+ stdlib functions reference included)
+- **SparkControls** (FPS / pointer / gamepad / mobile touch)
+- Per-platform performance optimization guide
 
-## インストール
+## Installation
 
-### 方法 1: git clone (推奨)
-
-任意の環境で以下を実行するだけで使えます:
+### Method 1: git clone (recommended)
 
 ```bash
 mkdir -p ~/.claude/skills
 git clone https://github.com/shi3z/sparkjs-skill.git ~/.claude/skills/sparkjs
 ```
 
-### 方法 2: Claude Code のプロジェクト設定
+### Method 2: Per-project setup
 
-プロジェクト単位で使いたい場合は、プロジェクトの `.claude/skills/` にクローン:
+Clone into your project's `.claude/skills/` directory to scope the skill to a specific project:
 
 ```bash
 mkdir -p .claude/skills
 git clone https://github.com/shi3z/sparkjs-skill.git .claude/skills/sparkjs
 ```
 
-### 方法 3: 手動コピー
+### Method 3: Manual copy
 
-リポジトリから `SKILL.md` と `references/` をダウンロードして `~/.claude/skills/sparkjs/` に配置:
+Download `SKILL.md` and the `references/` directory, then place them at `~/.claude/skills/sparkjs/`:
 
 ```
 ~/.claude/skills/sparkjs/
@@ -49,42 +47,42 @@ git clone https://github.com/shi3z/sparkjs-skill.git .claude/skills/sparkjs
     └── spark-renderer-options.md
 ```
 
-### アップデート
+### Updating
 
 ```bash
 cd ~/.claude/skills/sparkjs && git pull
 ```
 
-## ファイル構成
+## File Structure
 
 ```
 sparkjs/
-├── SKILL.md                           # メインスキル定義
-│   ├── Quick Start テンプレート
-│   ├── Core API リファレンス
-│   ├── SDF 編集・プロシージャル生成
-│   ├── LoD・パフォーマンス・コントロール
-│   └── Dyno シェーダー概要
+├── SKILL.md                           # Main skill definition
+│   ├── Quick Start template
+│   ├── Core API reference
+│   ├── SDF editing & procedural generation
+│   ├── LoD, performance & controls
+│   └── Dyno shader overview
 └── references/
-    ├── dyno-api.md                    # Dyno stdlib 全関数リファレンス
-    └── spark-renderer-options.md      # SparkRenderer 全コンストラクタオプション
+    ├── dyno-api.md                    # Dyno stdlib full function reference
+    └── spark-renderer-options.md      # SparkRenderer all constructor options
 ```
 
-## 使い方
+## Usage
 
-スキルをインストール後、SparkJS に関する質問やコード生成を依頼するだけで自動的にトリガーされます。
+Once installed, the skill triggers automatically when you ask Claude Code anything related to SparkJS.
 
-### トリガー例
+### Example Prompts
 
-- 「SparkJS で蝶のモデルを表示するページを作って」
-- 「SplatMesh にレイキャストを実装して」
-- 「SDF で球体領域のスプラットを削除したい」
-- 「LoD ストリーミングを有効にしてパフォーマンスを改善して」
-- 「Dyno でカスタムシェーダーを書いて」
+- "Create a page that displays a butterfly model with SparkJS"
+- "Add raycasting to a SplatMesh"
+- "Delete splats inside a sphere region using SDF"
+- "Enable LoD streaming to improve performance"
+- "Write a custom Dyno shader"
 
 ## Quick Start
 
-SparkJS の最小構成コード:
+Minimal SparkJS code:
 
 ```html
 <script type="importmap">
@@ -117,6 +115,6 @@ SparkJS の最小構成コード:
 </script>
 ```
 
-## ライセンス
+## License
 
 MIT
